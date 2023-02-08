@@ -4,7 +4,7 @@ import './Product.css'
 const Product = () => {
     return (
         <div>
-            <div className=" section-padding">
+            <div className=" section-padding bg-slate-200">
                 <div className="container">
                     <div className="text-center">
                         <div className="mini-title">Popular Product</div>

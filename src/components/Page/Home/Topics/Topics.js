@@ -11,7 +11,7 @@ import image8 from '../../../Image/t8.svg'
 const Topics = () => {
     return (
         <div>
-            <div className=" section-padding">
+            <div className=" section-padding bg-slate-200">
                 <div className="container">
                     <div className="text-center">
                         <div className="mini-title">Start Learning From Today</div>
