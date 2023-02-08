@@ -1,0 +1,137 @@
+.fxt-template-layout6{
+    background-image: url('../../Image/bg6-r\ \(1\).jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 50px 0;
+}
+
+.fxt-template-layout6 .fxt-content {
+    max-width: 660px;
+    margin: auto;
+    background-color: #fff;
+    padding: 90px 80px 70px;
+}
+
+.fxt-template-layout6 .fxt-form {
+    margin-bottom: 40px;
+}
+
+.fxt-template-layout6 .fxt-form h2 {
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.fxt-template-layout6 .fxt-form .form-group {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 15px;
+}
+
+.fxt-template-layout6 .fxt-form .form-control {
+    background-color: #f6f6f6;
+    min-height: 50px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+    width: 100%;
+    padding: 10px 30px;
+    color: #111111;
+}
+
+ .fxt-btn-fill:hover {
+    background-color: #f0530b;
+    border-color: #f0530b;
+}
+.fxt-btn-fill {
+    margin-right: 30px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    border: 0;
+    color: #fff;
+    border-radius: 3px;
+    background-color: #623018;
+    padding: 10px 36px;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.fxt-template-layout6 .fxt-form {
+    margin-bottom: 40px;
+}
+
+.fxt-template-layout6 .fxt-footer {
+    background-color: #fff;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.fxt-template-layout6 .fxt-footer p {
+    color: #747474;
+}
+
+.fxt-template-layout6 .switcher-text2 {
+    color: #63bbff;
+    font-size: 15px;
+    display: inline-block;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-left: 3px;
+}
+
+.fxt-template-layout6 .switcher-text2:hover {
+    color: #000;
+}
+
+.fxt-header {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.fxt-header a {
+    font-size: 45px;
+    text-align: center;
+    color: #722803;
+    font-weight: 800;
+    padding: 15px 0;
+    display: inline-block;
+}
+
+.fxt-header a {
+    font-size: 45px;
+    text-align: center;
+    color: #722803;
+    font-weight: 800;
+    padding: 15px 0;
+    display: inline-block;
+}
+
+.fxt-header {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+ul.fxt-socials a {
+    padding: 10px 0;
+    display: inline-block;
+    text-align: center;
+}
+
+ul.fxt-socials li {
+    text-align: center;
+}
+
+ul.fxt-socials li svg {
+    text-align: center;
+    font-size: 40px;
+}
