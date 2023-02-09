@@ -1,9 +1,21 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthProvider } from '../../Context/AuthContext';
-
+import { toast } from 'react-hot-toast';
 const Header = () => {
-    const { } = useContext(AuthProvider)
+    const { logOut } = useContext(AuthProvider)
+
+    // singOut
+    const singOut = () => {
+        logOut()
+            .then(() => {
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                toast.error(errorMessage)
+
+            });
+    }
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -14,9 +26,9 @@ const Header = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to={'/'}>Home</Link></li>
-                            
+
                             <li><Link to={'/card'}>Card</Link></li>
-                         
+
 
                         </ul>
                     </div>
@@ -25,11 +37,15 @@ const Header = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to={'/'}>Home</Link></li>
-                    
+
                         <li><Link to={'/card'}>Card</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end ">
+                <Link to={'/login'} onClick={singOut} className=" text-emerald-800">Log Out</Link>
+                    {
+
+                    }
                     <Link to={'/login'} className=" text-emerald-800">Login</Link>
                     <Link to={'/signUp'} className=" text-emerald-800 ml-3">Sing Up</Link>
                 </div>

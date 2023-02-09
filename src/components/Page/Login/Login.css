@@ -135,3 +135,12 @@ ul.fxt-socials li svg {
     text-align: center;
     font-size: 40px;
 }
+
+/* loading */
+
+.loading {
+    background: #f4fbfe;
+}
+.loading img {
+    margin: auto;
+}
