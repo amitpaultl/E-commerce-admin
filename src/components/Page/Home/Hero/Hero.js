@@ -1,23 +1,35 @@
 import React from 'react';
-import video from '../../../Image/4K Abstract Sci-Fi Tunnel VJ Motion Background __ Neon Light Tunnel Free VJ Loops __ 4K VJ Loops.mp4'
-
+import heroImg from '../../../Image/man3.png'
 const Hero = () => {
     return (
-        <div className='hero-area'>
-            <div className="hero-bg">
-                    <video src={video} autoPlay loop muted></video>
+        <div className=''>
+            <section class=" xl:min-h-screen ">
+                <div class="container relative">
+                    <div class="xl:max-w-[570px] lg:max-w-[770px] xl:py-[174px] lg:py-28 md:py-20 py-14">
 
-                </div>
-            <div className="hero text-hero" >
-                <div className=" "></div>
-                <div className="hero-content text-center text-neutral-content">
-                    <div className="max-w-md">
-                        <h1 className="mb-5 text-5xl font-bold">Welcome </h1>
-                        <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn fxt-btn-fill">Get Started</button>
+
+                        <div className="text ">
+                            <div className="column-title ">
+                                <h2 className='text-xl lg:text-6xl'>
+                                    Classical
+                                    <span className="shape-bg">Education</span>
+                                    Future
+                                </h2>
+
+                            </div>
+                            <div class=" plain-text text-gray leading-[30px] mt-8 mb-14 text-2xl">
+                                It is long established fact that reader distracted by the readable content.
+                            </div>
+                        </div>
+                        <div class="md:flex  md:space-x-4 space-y-3 md:space-y-0 text-center">
+                            <a href="#" class="btn fxt-btn-fill">Learn From Today</a>
+                        </div>
+                    </div>
+                    <div class="imge-box absolute right-[-60px] top-1/2  -translate-y-1/2 hidden xl:block   ">
+                        <img src={heroImg} alt="" />
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };

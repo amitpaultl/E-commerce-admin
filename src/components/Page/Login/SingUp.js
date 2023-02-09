@@ -1,8 +1,56 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Login.css'
 import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
+import { AuthProvider } from '../../Context/AuthContext';
+import { toast } from 'react-hot-toast';
 const SingUp = () => {
+    // context
+    const { signInWithGoogle, emailSignUp, emailVerify} = useContext(AuthProvider);
+
+    // Email login 
+    const emailLogin=(e)=>{
+        e.preventDefault()
+        const common = e.target
+        const name = common.name.value
+        const email = common.email.value
+        const password = common.password.value
+        const userInfo = {
+            name,email,password
+        }
+        // email singUp
+        emailSignUp(email,password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            emailVerify()
+            .then(() => {
+                toast.success('Please Check your Email')
+              });
+          })
+          .catch((error) => {
+            // Handle Errors here.
+            const errorMessage = error.message;
+            toast.error(errorMessage)
+          });
+        
+        
+    }
+
+    // Google sing up
+    const googleHandel = () =>{
+        signInWithGoogle()
+        .then((result) => {
+            // Message 
+            toast.success('Successfully Sign Up')
+          }).catch((error) => {
+            // Handle Errors here.
+            const errorMessage = error.message;
+            toast.error(errorMessage)
+          });
+    }
+
+
     return (
         <div>
             <section className="fxt-template-animation fxt-template-layout6 loaded" >
@@ -12,7 +60,7 @@ const SingUp = () => {
                 <div className="fxt-content">
                     <div className="fxt-form">
                         <h2>Register for new account</h2>
-                        <form method="POST">
+                        <form  onSubmit={emailLogin}>
                             <div className="form-group">
                                 <div className="fxt-transformY-50 fxt-transition-delay-3">
                                     <input type="text" className="form-control" name="name" placeholder="Name" required="required"/>
@@ -38,7 +86,7 @@ const SingUp = () => {
                     <div className="fxt-footer">
                         <ul className="fxt-socials">
                             <li className="fxt-facebook fxt-transformY-50 fxt-transition-delay-6">
-                                <Link><FcGoogle></FcGoogle></Link>
+                                <Link onClick={googleHandel}><FcGoogle></FcGoogle></Link>
                             </li>
                         </ul>
                         <div className="fxt-transformY-50 fxt-transition-delay-10">

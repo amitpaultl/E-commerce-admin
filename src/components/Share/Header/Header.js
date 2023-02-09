@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthProvider } from '../../Context/AuthContext';
 
 const Header = () => {
+    const { } = useContext(AuthProvider)
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -13,7 +15,9 @@ const Header = () => {
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to={'/'}>Home</Link></li>
                             
-                            <li><Link>Item 3</Link></li>
+                            <li><Link to={'/card'}>Card</Link></li>
+                         
+
                         </ul>
                     </div>
                     <a className="btn btn-ghost normal-case text-xl">REPLIQ</a>
@@ -22,7 +26,7 @@ const Header = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to={'/'}>Home</Link></li>
                     
-                        <li><Link>Item 3</Link></li>
+                        <li><Link to={'/card'}>Card</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end ">
