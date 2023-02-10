@@ -29,7 +29,7 @@ const Cards = ({ data }) => {
                         </span>
                         <span className=" flex items-center space-x-2">
                             <BsStar></BsStar>
-                            <span>4.8</span>
+                            <span>4.8</span> 
                         </span>
                     </div>
                 </div>
