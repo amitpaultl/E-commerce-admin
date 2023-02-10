@@ -32,7 +32,7 @@ const Addproduct = () => {
                         name, instructor, lectures, duration, message,
                         image: image.data.display_url,price,discount
                     }
-                    fetch(`http://localhost:5000/addProduct`, {
+                    fetch(`https://repliq-server-gules.vercel.app/addProduct`, {
                         method: 'POST',
                         headers: {
 

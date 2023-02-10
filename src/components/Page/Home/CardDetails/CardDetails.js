@@ -14,7 +14,7 @@ const CardDetails = () => {
         queryKey: ['course'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/addProduct/${id}`, {
+                const res = await fetch(`https://repliq-server-gules.vercel.app/addProduct/${id}`, {
                     headers: {
                         'content-type': 'application/json',
                     },
@@ -47,7 +47,7 @@ const CardDetails = () => {
     }
     const cardAdd = () => {
 
-        fetch(`http://localhost:5000/booking`, {
+        fetch(`https://repliq-server-gules.vercel.app/booking`, {
             method: 'POST',
             headers: {
 

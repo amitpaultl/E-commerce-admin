@@ -34,7 +34,7 @@ const SingUp = () => {
 
 
                                 // fetch user post
-                                fetch('http://localhost:5000/user', {
+                                fetch('https://repliq-server-gules.vercel.app/user', {
                                     method: 'PUT',
                                     headers: {
                                         'content-type': 'application/json'

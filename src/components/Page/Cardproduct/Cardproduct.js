@@ -12,7 +12,7 @@ const Cardproduct = () => {
         queryKey: ['course'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/booking`, {
+                const res = await fetch(`https://repliq-server-gules.vercel.app/booking`, {
                     headers: {
                         'content-type': 'application/json',
                     },
@@ -49,7 +49,7 @@ const Cardproduct = () => {
     const deleteHandel = (id) => {
 
    
-            fetch(`http://localhost:5000/booking/${id}`, {
+            fetch(`https://repliq-server-gules.vercel.app/booking/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json',

@@ -27,7 +27,7 @@ const Router = createBrowserRouter([
             },
             {
                 path:'/cardDetails/:id',
-                element:<CardDetails></CardDetails>
+                element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute> 
             },
             {
                 path:'/login',
@@ -39,11 +39,11 @@ const Router = createBrowserRouter([
             },
             {
                 path:'/cards',
-                element:<Cardproduct></Cardproduct>
+                element:<PrivateRoute><Cardproduct></Cardproduct></PrivateRoute> 
             },
             {
                 path:'/order',
-                element:<Adminorder></Adminorder>
+                element:<PrivateRoute><Adminorder></Adminorder></PrivateRoute> 
             },
             {
                 path:'/addproduct',

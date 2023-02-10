@@ -4,10 +4,8 @@ import { BsFileEarmarkPlus, BsStar } from "react-icons/bs";
 import { BiTimeFive } from "react-icons/bi";
 import { Link } from 'react-router-dom';
 const Cards = ({ data }) => {
+    
     const { _id, name, lectures, duration, message, image, price, discount } = data;
-
-
-
     return (
         <div className=" bg-white shadow-box2 rounded-[8px] transition duration-100 hover:shadow-sm">
             <Link to={`/cardDetails/${_id}`}  >
