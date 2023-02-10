@@ -1,14 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
-import TableProduct from './TableProduct';
 
-const ProductList = () => {
+const Adminorder = () => {
+
     const { data: course, isLoading, refetch } = useQuery({
         queryKey: ['course'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/addProduct`, {
+                const res = await fetch(`http://localhost:5000/booking`, {
                     headers: {
                         'content-type': 'application/json',
                     },
@@ -38,7 +39,6 @@ const ProductList = () => {
             </div>
         )
     }
-    
 
     return (
         <div>
@@ -51,16 +51,40 @@ const ProductList = () => {
 
                                 <th>Image</th>
                                 <th>Name</th>
-                                <th>Instructor</th>
+                                <th>Price</th>
                                 <th>Details</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             {
-                                course?.data?.map(courses => <TableProduct data={courses} key={courses._id}></TableProduct>)
+                                course?.data?.map(courses =>
+                                    <tr key={courses._id}>
+
+                                        <td>
+                                            <div className="flex items-center space-x-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle w-12 h-12">
+                                                        <img src={courses.image} alt="Avatar Tailwind CSS Component" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </td>
+                                        <td>
+                                            {courses.name}
+
+                                        </td>
+                                        <td>{courses.price}</td>
+                                        <th>
+                                            <Link to={`/cardDetails/${courses.id}`} className="btn btn-ghost btn-xs">details</Link>
+                                        </th>
+
+
+                                    </tr>
+                                )
                             }
-                            
+
 
 
                         </tbody>
@@ -71,4 +95,4 @@ const ProductList = () => {
     );
 };
 
-export default ProductList;
+export default Adminorder;

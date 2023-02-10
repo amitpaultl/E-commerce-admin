@@ -41,10 +41,11 @@ const Header = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to={'/'}>Home</Link></li>
-
                         <li><Link to={'/card'}>Card</Link></li>
                         <li><Link to={'/addproduct'}>Add product</Link></li>
                         <li><Link to={'/productList'}>Product List</Link></li>
+                        <li><Link to={'/cards'}>Card</Link></li>
+                        <li><Link to={'/order'}>Order</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end ">

@@ -3,6 +3,7 @@ import Products from './products';
 import './Product.css'
 import Loading from '../../../Loading/Loading';
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 const Product = () => {
 
     // course data load
@@ -41,6 +42,8 @@ const Product = () => {
         )
     }
 
+    const productSlice = course?.data?.slice( -3)
+
     
     return (
         <div>
@@ -55,14 +58,14 @@ const Product = () => {
                     </div>
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[30px] pt-10">
                         {
-                            course?.data?.map(courses => <Products data={courses} key={courses._id 
+                            productSlice?.map(courses => <Products data={courses} key={courses._id 
                             }></Products>)
                         }
                         
 
                     </div>
                     <div className="text-center lg:pt-16 pt-10">
-                        <a href="#" className=" fxt-btn-fill">View All Product</a>
+                        <Link  to={'/card'} className=" fxt-btn-fill">View All Product</Link>
                     </div>
                 </div>
             </div>

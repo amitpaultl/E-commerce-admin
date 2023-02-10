@@ -47,7 +47,7 @@ const CardDetails = () => {
     }
     const cardAdd = () => {
 
-        fetch(`http://localhost:5000/card`, {
+        fetch(`http://localhost:5000/booking`, {
             method: 'POST',
             headers: {
 

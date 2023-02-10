@@ -1,7 +1,9 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Addproduct from '../Page/Addproduct/Addproduct';
+import Adminorder from '../Page/Adminorder/Adminorder';
 import Card from '../Page/Card/Card';
+import Cardproduct from '../Page/Cardproduct/Cardproduct';
 import CardDetails from '../Page/Home/CardDetails/CardDetails';
 import Home from '../Page/Home/Home';
 import Login from '../Page/Login/Login';
@@ -34,6 +36,14 @@ const Router = createBrowserRouter([
             {
                 path:'/signUp',
                 element:<SingUp></SingUp>
+            },
+            {
+                path:'/cards',
+                element:<Cardproduct></Cardproduct>
+            },
+            {
+                path:'/order',
+                element:<Adminorder></Adminorder>
             },
             {
                 path:'/addproduct',
