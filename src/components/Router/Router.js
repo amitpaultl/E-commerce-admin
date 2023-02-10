@@ -1,11 +1,14 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import Addproduct from '../Page/Addproduct/Addproduct';
 import Card from '../Page/Card/Card';
 import CardDetails from '../Page/Home/CardDetails/CardDetails';
 import Home from '../Page/Home/Home';
 import Login from '../Page/Login/Login';
 import SingUp from '../Page/Login/SingUp';
+import ProductList from '../Page/ProductList/ProductList';
 import Root from '../Root/Root';
+import PrivateRoute from './PrivateRoute';
 
 const Router = createBrowserRouter([
     {
@@ -21,7 +24,7 @@ const Router = createBrowserRouter([
                 element:<Card></Card>
             },
             {
-                path:'/cardDetails',
+                path:'/cardDetails/:id',
                 element:<CardDetails></CardDetails>
             },
             {
@@ -31,6 +34,14 @@ const Router = createBrowserRouter([
             {
                 path:'/signUp',
                 element:<SingUp></SingUp>
+            },
+            {
+                path:'/addproduct',
+                element:<PrivateRoute><Addproduct></Addproduct></PrivateRoute>
+            },
+            {
+                path:'/productList',
+                element:<PrivateRoute><ProductList></ProductList></PrivateRoute>
             },
         ]
     }

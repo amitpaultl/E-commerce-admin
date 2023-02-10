@@ -3,9 +3,9 @@ import heroImg from '../../../Image/man3.png'
 const Hero = () => {
     return (
         <div className=''>
-            <section class=" xl:min-h-screen ">
-                <div class="container relative">
-                    <div class="xl:max-w-[570px] lg:max-w-[770px] xl:py-[174px] lg:py-28 md:py-20 py-14">
+            <section className=" xl:min-h-screen ">
+                <div className="container relative">
+                    <div className="xl:max-w-[570px] lg:max-w-[770px] xl:py-[174px] lg:py-28 md:py-20 py-14">
 
 
                         <div className="text ">
@@ -17,15 +17,15 @@ const Hero = () => {
                                 </h2>
 
                             </div>
-                            <div class=" plain-text text-gray leading-[30px] mt-8 mb-14 text-2xl">
+                            <div className=" plain-text text-gray leading-[30px] mt-8 mb-14 text-2xl">
                                 It is long established fact that reader distracted by the readable content.
                             </div>
                         </div>
-                        <div class="md:flex  md:space-x-4 space-y-3 md:space-y-0 text-center">
-                            <a href="#" class="btn fxt-btn-fill">Learn From Today</a>
+                        <div className="md:flex  md:space-x-4 space-y-3 md:space-y-0 text-center">
+                            <a href="#" className="btn fxt-btn-fill">Learn From Today</a>
                         </div>
                     </div>
-                    <div class="imge-box absolute right-[-60px] top-1/2  -translate-y-1/2 hidden xl:block   ">
+                    <div className="imge-box absolute right-[-60px] top-1/2  -translate-y-1/2 hidden xl:block   ">
                         <img src={heroImg} alt="" />
                     </div>
                 </div>

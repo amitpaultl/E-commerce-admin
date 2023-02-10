@@ -7,7 +7,7 @@ import { toast } from 'react-hot-toast';
 import Loading from '../../Loading/Loading';
 const SingUp = () => {
     // context
-    const { signInWithGoogle, emailSignUp, emailVerify, UserNameAdd,logOut, loading ,setLoading} = useContext(AuthProvider);
+    const { signInWithGoogle, emailSignUp, emailVerify, UserNameAdd, logOut, loading, setLoading } = useContext(AuthProvider);
 
     // Email login 
     const emailLogin = (e) => {
@@ -30,14 +30,33 @@ const SingUp = () => {
                         // emailVerify
                         emailVerify()
                             .then(() => {
-                                toast.success('Please Check your Email')
-                                console.log(user)
-                                setLoading(false)
+
+
+
+                                // fetch user post
+                                fetch('http://localhost:5000/user', {
+                                    method: 'PUT',
+                                    headers: {
+                                        'content-type': 'application/json'
+                                    },
+                                    body: JSON.stringify(userInfo)
+                                })
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        toast.success('Please Check your Email')
+                                        setLoading(false)
+                                        console.log(data);
+                                    })
+                                    .catch(error => {
+                                        toast.error(error.message)
+                                        setLoading(false)
+                                    })
                             });
                     }).catch((error) => {
                         // Handle Errors here.
                         const errorMessage = error.message;
                         toast.error(errorMessage)
+                        setLoading(false)
                     })
 
             })
@@ -45,6 +64,7 @@ const SingUp = () => {
                 // Handle Errors here.
                 const errorMessage = error.message;
                 toast.error(errorMessage)
+                setLoading(false)
             });
 
 
@@ -61,11 +81,12 @@ const SingUp = () => {
                 // Handle Errors here.
                 const errorMessage = error.message;
                 toast.error(errorMessage)
+                setLoading(false)
             });
     }
 
     // loading
-    if(loading){
+    if (loading) {
         return <Loading></Loading>
     }
 

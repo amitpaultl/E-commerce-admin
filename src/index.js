@@ -5,13 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthContext from './components/Context/AuthContext';
 import toast, { Toaster } from 'react-hot-toast';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// Create a client
+const queryClient = new QueryClient()
 root.render(
   <React.StrictMode>
-    <AuthContext>
-      <App />
-      <Toaster />
-    </AuthContext>
+    <QueryClientProvider client={queryClient}>
+      <AuthContext>
+        <App />
+        <Toaster />
+      </AuthContext>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

@@ -59,6 +59,8 @@ const AuthContext = ({ children }) => {
         return signOut(auth)
     }
 
+    
+
     // currentUser
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {

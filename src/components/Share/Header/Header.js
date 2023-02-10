@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthProvider } from '../../Context/AuthContext';
 import { toast } from 'react-hot-toast';
+import { FaUserCircle, IconName } from "react-icons/fa";
+import './Header.css'
 const Header = () => {
-    const { logOut } = useContext(AuthProvider)
+    const { logOut, user } = useContext(AuthProvider)
 
     // singOut
     const singOut = () => {
@@ -16,6 +18,8 @@ const Header = () => {
 
             });
     }
+
+    console.log(user);
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -39,18 +43,32 @@ const Header = () => {
                         <li><Link to={'/'}>Home</Link></li>
 
                         <li><Link to={'/card'}>Card</Link></li>
+                        <li><Link to={'/addproduct'}>Add product</Link></li>
+                        <li><Link to={'/productList'}>Product List</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end ">
-                <Link to={'/login'} onClick={singOut} className=" text-emerald-800">Log Out</Link>
+                    {
+                        user?.email ? <div className='flex items-center'>
+                            {
+                                user?.photoURL ? <img className='user-img ' src={user.photoURL} alt="" /> :<FaUserCircle></FaUserCircle>
+                            }
+                            <Link to={'/login'} onClick={singOut} className=" ml-3 text-emerald-800">Log Out</Link>
+
+                             
+                        </div> : <div>
+                            <Link to={'/login'} className=" text-emerald-800">Login</Link>
+                            <Link to={'/signUp'} className=" text-emerald-800 ml-3">Sing Up</Link>
+                        </div>
+                    }
+
                     {
 
                     }
-                    <Link to={'/login'} className=" text-emerald-800">Login</Link>
-                    <Link to={'/signUp'} className=" text-emerald-800 ml-3">Sing Up</Link>
+
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
